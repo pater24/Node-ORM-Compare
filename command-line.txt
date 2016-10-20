@@ -1,0 +1,16 @@
+// creates config/ models/ migrations/ seeders/
+../node_modules/.bin/sequelize init
+
+../node_modules/.bin/sequelize model:create --name table --attributes attr1:string,attr2:integer,attr3:boolean
+
+// Runs migration
+../node_modules/.bin/sequelize db:migrate
+
+// creates knexfile
+../node_modules/.bin/knex init
+
+// creates migration file
+../node_modules/.bin/knex migrate:make tables
+
+// Runs migration
+../node_modules/.bin/knex migrate:latest
